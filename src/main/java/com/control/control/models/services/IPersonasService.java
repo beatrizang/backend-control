@@ -4,6 +4,7 @@
  */
 package com.control.control.models.services;
 
+import com.control.control.models.entity.Controles;
 import com.control.control.models.entity.Personas;
 import java.util.List;
 import org.springframework.data.domain.Page;
@@ -23,4 +24,11 @@ public interface IPersonasService {
     public Personas save(Personas persona);
     
     public void delete(Long id);
+    
+    public Controles findControlById(Long id);
+    
+    public Controles saveControl(Controles control);
+    
+    public void deleteControlById(Long id);
+    
 }

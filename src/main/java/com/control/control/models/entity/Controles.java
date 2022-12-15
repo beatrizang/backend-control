@@ -47,7 +47,7 @@ public class Controles implements Serializable{
     private String descripcion;
     
     //Many corresponde a factura y one a la clase persona
-    @JsonIgnoreProperties({"controles","hibernateLazyInitializer","handler"})
+    @JsonIgnoreProperties(value={"controles","hibernateLazyInitializer","handler"},allowSetters=true)
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="id_persona")
     private Personas persona;

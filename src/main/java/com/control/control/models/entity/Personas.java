@@ -48,7 +48,7 @@ public class Personas implements Serializable{
     
     private Long altura;
     
-    @JsonIgnoreProperties({"persona","hibernateLazyInitializer","handler"})
+    @JsonIgnoreProperties(value={"persona","hibernateLazyInitializer","handler"},allowSetters=true)
     @OneToMany(fetch=FetchType.LAZY, mappedBy="persona",cascade=CascadeType.ALL)
     private List<Controles> controles;
 

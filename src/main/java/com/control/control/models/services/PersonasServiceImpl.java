@@ -4,7 +4,9 @@
  */
 package com.control.control.models.services;
 
+import com.control.control.models.dao.IControlesDao;
 import com.control.control.models.dao.IPersonasDao;
+import com.control.control.models.entity.Controles;
 import com.control.control.models.entity.Personas;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class PersonasServiceImpl implements IPersonasService{
     
     @Autowired
     private IPersonasDao personasDao;
+    
+    @Autowired
+    private IControlesDao controlesDao;
 
     @Override
     @Transactional(readOnly = true)
@@ -49,6 +54,24 @@ public class PersonasServiceImpl implements IPersonasService{
     @Override
     public void delete(Long id) {
         personasDao.deleteById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Controles findControlById(Long id) {
+        return controlesDao.findById(id).orElse(null);
+    }
+
+    @Override
+    @Transactional
+    public Controles saveControl(Controles control) {
+        return controlesDao.save(control);
+    }
+
+    @Override
+    @Transactional
+    public void deleteControlById(Long id) {
+        controlesDao.deleteById(id);
     }
 
 

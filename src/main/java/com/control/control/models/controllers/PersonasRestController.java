@@ -55,7 +55,7 @@ public class PersonasRestController {
         return personaService.findAll(pageable);
     }
     
-//    @Secured({"ROLE_ADMIN","ROLE_USER"})
+    @Secured({"ROLE_ADMIN","ROLE_USER"})
     @GetMapping("/personas/{id}")
     public ResponseEntity <?> mostrarPersona(@PathVariable Long id){
         Personas persona = null;
