@@ -5,10 +5,7 @@
 package com.control.control.models.services;
 
 import com.control.control.models.dao.IControlesDao;
-import com.control.control.models.dao.IPersonasDao;
 import com.control.control.models.entity.Controles;
-import com.control.control.models.entity.Personas;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,42 +17,28 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Beatriz
  */
 @Service
-public class PersonasServiceImpl implements IPersonasService{
-    
-    @Autowired
-    private IPersonasDao personasDao;
+public class ControlesServiceImpl implements IControlesService{
     
     @Autowired
     private IControlesDao controlesDao;
 
     @Override
     @Transactional(readOnly = true)
-    public List<Personas> findAll() {
-       return (List<Personas>)personasDao.findAll();
-    }
-    
-    @Override
-    @Transactional(readOnly = true)
-    public Page<Personas> findAll(Pageable pageable) {
-        return personasDao.findAll(pageable);
+    public Controles findControlById(Long id) {
+        return controlesDao.findById(id).orElse(null);
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public Personas findById(Long id) {
-        return personasDao.findById(id).orElse(null);
+    @Transactional
+    public Controles saveControl(Controles control) {
+        return controlesDao.save(control);
     }
 
     @Override
-    public Personas save(Personas persona) {
-        return personasDao.save(persona);
+    @Transactional
+    public void deleteControlById(Long id) {
+        controlesDao.deleteById(id);
     }
-
-    @Override
-    public void delete(Long id) {
-        personasDao.deleteById(id);
-    }
-
 
     
 }

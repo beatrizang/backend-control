@@ -18,8 +18,9 @@ INSERT INTO `usuarios_roles` (usuario_id,rol_id) VALUES (1,1);
 INSERT INTO `usuarios_roles` (usuario_id,rol_id) VALUES (2,2);
 INSERT INTO `usuarios_roles` (usuario_id,rol_id) VALUES (2,1);
 
-INSERT INTO Controles (id_control,id_persona,fecha,peso,grasa,imc,musculo,calorias,edad_metabolica,visceral) VALUES (1,1,"2022-03-14",72.7,26.7,40.8,25.4,1428,40,6);
-INSERT INTO Controles (id_control,id_persona,fecha,peso,grasa,imc,musculo,calorias,edad_metabolica,visceral) VALUES (2,1,"2022-03-16",73.3,26.9,40.4,25.8,1437,41,6);
-
-
+INSERT INTO Controles (id_control,id_persona,fecha,peso,imc,grasa,musculo,calorias,edad_metabolica,visceral) VALUES (1,1,"2022-03-14",72.7,26.7,40.8,25.4,1428,40,6);
+INSERT INTO Controles (id_control,id_persona,fecha,peso,imc,grasa,musculo,calorias,edad_metabolica,visceral) VALUES (2,1,"2022-03-16",73.3,26.9,40.4,25.8,1437,41,6);
+INSERT INTO Controles (id_control,id_persona,fecha,peso,imc,grasa,musculo,calorias,edad_metabolica,visceral) VALUES (3,1,"2022-03-21",73.1,26.9,36.6,26.3,1438,40,6);
+INSERT INTO Controles (id_control,id_persona,fecha,peso,imc,grasa,musculo,calorias,edad_metabolica,visceral) VALUES (4,1,"2022-03-28",73.0,26.8,39.4,26.4,1437,40,5);
+INSERT INTO Controles (id_control,id_persona,fecha,peso,imc,grasa,musculo,calorias,edad_metabolica,visceral) VALUES (5,1,"2022-04-05",73.3,26.9,40.81,26.0,1439,41,6);
 

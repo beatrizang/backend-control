@@ -25,10 +25,4 @@ public interface IPersonasService {
     
     public void delete(Long id);
     
-    public Controles findControlById(Long id);
-    
-    public Controles saveControl(Controles control);
-    
-    public void deleteControlById(Long id);
-    
 }
